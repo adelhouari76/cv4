@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>سيرتي الذاتية</title>
+  <style>
+    body {
+      background-color: #f0f0f0;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      padding: 50px;
+      transition: background-color 0.5s ease;
+    }
+
+    .cv {
+      background-color: white;
+      padding: 30px;
+      border-radius: 15px;
+      width: 400px;
+      margin: auto;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: background-color 0.5s ease;
+    }
+
+    img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #0077cc;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      margin: 10px 0;
+      color: #333;
+    }
+
+    h2 {
+      color: #0077cc;
+      font-size: 20px;
+      margin-top: 20px;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      padding: 5px 0;
+      color: #444;
+    }
+
+    .gmail, .contact {
+      margin-top: 20px;
+      font-size: 16px;
+      color: #0077cc;
+    }
+
+    .contact {
+      direction: ltr;
+    }
+
+    button {
+      margin-top: 25px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #0077cc;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #005fa3;
+    }
+
+    .linkedin-button,
+    .download-button {
+      display: inline-block;
+      margin-top: 20px;
+      background-color: #0077b5;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+    }
+
+    .linkedin-button:hover,
+    .download-button:hover {
+      background-color: #005582;
+    }
+
+    .download-button {
+      background-color: #28a745;
+    }
+
+    .download-button:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cv" id="cvCard">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9MGeMrbLVx-u5SK8OVe57SOtw7b5D5Ctztg&s" alt="My Photo">
+    <h1 id="name">هوار عابد</h1>
+    <p id="summary">تقني سامي في الصيانة الصناعية - مهتم بالبرمجة وتطوير الأنظمة الذكية</p>
+
+    <h2 id="skillsTitle">🛠️ المهارات</h2>
+    <ul id="skills">
+      <li>برمجة Arduino وESP32</li>
+      <li>التحكم في الأنظمة الصناعية</li>
+      <li>HTML / CSS / JavaScript</li>
+      <li>تركيب وصيانة كهرباء صناعية</li>
+    </ul>
+
+    <h2 id="certsTitle">🎓 الشهادات</h2>
+    <ul id="certs">
+      <li>شهادة تقني سامي - الصيانة الصناعية</li>
+      <li>دورات في برمجة الأنظمة المدمجة</li>
+    </ul>
+
+    <div class="gmail">📧 amine1234567890ho@gmail.com</div>
+    <div class="contact">📞 06 96 86 20 12</div>
+
+    <!-- زر LinkedIn -->
+    <a class="linkedin-button" href="https://www.linkedin.com/in/adel-houari-93725b368/" target="_blank">
+      🔗 حساب LinkedIn
+    </a>
+
+    <!-- زر تحميل السيرة الذاتية PDF -->
+    <a class="download-button" href="cv.pdf" download>
+      📄 تحميل السيرة الذاتية PDF
+    </a>
+
+    <!-- زر تغيير اللغة -->
+    <button onclick="toggleLanguage()">🌐 تغيير اللغة / Switch Language</button>
+  </div>
+
+  <script>
+    let isArabic = true;
+
+    function toggleLanguage() {
+      const html = document.documentElement;
+      const name = document.getElementById('name');
+      const summary = document.getElementById('summary');
+      const skillsTitle = document.getElementById('skillsTitle');
+      const skills = document.getElementById('skills');
+      const certsTitle = document.getElementById('certsTitle');
+      const certs = document.getElementById('certs');
+
+      if (isArabic) {
+        // English mode
+        html.lang = "en";
+        html.dir = "ltr";
+        name.textContent = "Adel Houari";
+        summary.textContent = "Senior technician in industrial maintenance – Passionate about programming and smart systems development";
+        skillsTitle.textContent = "🛠️ Skills";
+        skills.innerHTML = `
+          <li>Arduino & ESP32 Programming</li>
+          <li>Industrial Systems Control</li>
+          <li>HTML / CSS / JavaScript</li>
+          <li>Industrial Electrical Installation & Maintenance</li>
+        `;
+        certsTitle.textContent = "🎓 Certificates";
+        certs.innerHTML = `
+          <li>Senior Technician Degree – Industrial Maintenance</li>
+          <li>Embedded Systems Programming Courses</li>
+        `;
+      } else {
+        // Arabic mode
+        html.lang = "ar";
+        html.dir = "rtl";
+        name.textContent = "هواري عادل";
+        summary.textContent = "تقني سامي في الصيانة الصناعية - مهتم بالبرمجة وتطوير الأنظمة الذكية";
+        skillsTitle.textContent = "🛠️ المهارات";
+        skills.innerHTML = `
+          <li>برمجة Arduino وESP32</li>
+          <li>التحكم في الأنظمة الصناعية</li>
+          <li>HTML / CSS / JavaScript</li>
+          <li>تركيب وصيانة كهرباء صناعية</li>
+        `;
+        certsTitle.textContent = "🎓 الشهادات";
+        certs.innerHTML = `
+          <li>شهادة تقني سامي - الصيانة الصناعية</li>
+          <li>دورات في برمجة الأنظمة المدمجة</li>
+        `;
+      }
+
+      isArabic = !isArabic;
+    }
+  </script>
+
+</body>
+</html>
